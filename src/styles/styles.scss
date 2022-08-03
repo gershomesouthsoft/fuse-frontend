@@ -1,0 +1,92 @@
+/* ----------------------------------------------------------------------------------------------------- */
+/*  @ Import/write your custom styles here.
+/*  @ Styles from this file will override 'vendors.scss' and Fuse's base styles.
+/* ----------------------------------------------------------------------------------------------------- */
+.mat-tab-labels {
+    border-bottom: 1px solid #e2e2e2 !important;
+}
+.mat-tab-group .mat-tab-header .mat-tab-label-container .mat-tab-list .mat-tab-labels .mat-tab-label.mat-tab-label-active {
+    color: #319795 !important;
+    border-bottom: 2px solid #319795 !important;
+    background-color: unset !important;
+}
+.mat-tab-group .mat-tab-header .mat-tab-label-container .mat-tab-list .mat-tab-labels .mat-tab-label {
+    border-radius: unset !important;
+    margin-right: 30px !important;
+    padding: 0px !important;
+    margin-left: 30px !important;
+}
+.mat-tab-group .mat-tab-header .mat-tab-label-container {
+    padding: 0px !important;
+}
+.mat-tab-group .mat-tab-body-content {
+    padding: 0px !important;
+}
+.mat-sort-header-container:not(.mat-sort-header-sorted) .mat-sort-header-arrow {
+    opacity: 1 !important;
+    color: black;
+    font-weight: 500;
+    transform: translateY(0px) !important;
+}
+.mat-sort-header-arrow[style] {
+
+    // Hide default arrow stem
+    .mat-sort-header-stem {
+      display: none;
+    }
+    .mat-sort-header-indicator {
+      opacity: 1;
+      color: black;
+      font-weight: bold;
+  
+      // Hide default arrow as its composed of left, right and middle
+      .mat-sort-header-pointer-left, .mat-sort-header-pointer-right, .mat-sort-header-pointer-middle  {
+        display: none;
+      }
+    }
+  }
+  .mat-paginator-container {
+    flex-direction: row-reverse;
+    justify-content: space-between !important;
+  }
+  .mat-paginator-range-label {
+    display: none;
+  }
+  .mat-paginator-page-size-label {
+    display: none !important;
+  }
+  .cdk-overlay-pane {
+    position: fixed !important;
+    transform: translate(0px, 17px) !important;
+  }
+  .cdk-global-overlay-wrapper, .cdk-overlay-container { 
+    z-index: 9999!important; 
+  }
+  .mat-paginator-navigation-last {
+    font-size: 22px;
+  }
+  .mat-paginator-navigation-first {
+    font-size: 22px;
+  }
+  .mat-form-field.mat-form-field-appearance-fill .mat-form-field-wrapper .mat-form-field-flex .mat-form-field-infix .mat-select .mat-select-trigger .mat-select-value {
+    display: none;
+  }
+  .mat-select-arrow-wrapper {
+    display: none !important;
+  }
+  .mat-paginator-page-size-select.mat-form-field-appearance-fill {
+    width: 200px !important;
+    left: 7px;
+    top: -2px;
+    z-index: 999;
+  }
+  .mat-form-field.mat-form-field-appearance-fill .mat-form-field-wrapper .mat-form-field-flex {
+    opacity: 0 !important;
+  }
+  .mat-select-panel {
+    min-width: unset !important;
+    max-width: unset !important;
+    display: flex;
+  }
+  
+  

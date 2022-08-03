@@ -1,0 +1,8 @@
+<div
+    class="settings-cog fixed flex items-center justify-center right-0 w-10 h-10 shadow-lg rounded-r-lg z-90 cursor-pointer bg-gray-500 bg-opacity-90 print:hidden"
+    [class.lg:right-0]="config.layout === 'centered' || config.layout === 'material'"
+    [class.lg:right-0]="config.layout !== 'centered' && config.layout !== 'material'"
+    style="top: 375px">
+    <mat-icon class="icon-size-5 text-white">sort</mat-icon>
+</div>
+

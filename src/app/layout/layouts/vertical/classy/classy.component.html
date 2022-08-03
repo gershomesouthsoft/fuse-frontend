@@ -1,0 +1,56 @@
+<!-- Loading bar -->
+<fuse-loading-bar></fuse-loading-bar>
+
+<!-- Navigation -->
+<fuse-vertical-navigation
+    class="print:hidden bg-teal-600"
+    [mode]="isScreenSmall ? 'over' : 'side'"
+    [name]="'mainNavigation'"
+    [navigation]="navigation.default"
+    [opened]="!isScreenSmall">
+    <!-- Navigation header hook -->
+    <ng-container fuseVerticalNavigationContentHeader>
+        <div class="flex items-center w-full pt-4 pb-4  bg-teal-100 bg-white-400 ">
+            <!-- Logo -->
+            <div class="flex items-center justify-center m-auto">
+                <img
+                    class=" "
+                    src="assets/images/logo/logo.svg">
+            </div>
+        </div>
+        <!-- User -->
+    </ng-container>
+</fuse-vertical-navigation>
+
+<!-- Wrapper -->
+<div class="flex flex-col flex-auto w-full min-w-0">
+
+    <!-- Header -->
+    <div class="relative flex flex-0 items-center w-full h-16  z-49  dark:shadow-none dark:border-b bg-teal-100 dark:bg-transparent print:hidden">
+        <!-- Navigation toggle button -->
+
+        <!-- Components -->
+        <div class="flex items-center px-8 ml-auto space-x-0.5 sm:space-x-2 flex justify-end flex-1 border-l-2 border-gray-200">
+            <div class="flex-1 font-semibold"><span class="text-black font-bold">system portal:</span> Finance & Account > Account</div>
+            <button mat-icon-button><mat-icon class="text-black">zoom_out_map</mat-icon></button>
+            <button mat-icon-button><mat-icon class="text-black">notifications</mat-icon></button>
+            <button mat-icon-button><mat-icon class="text-black">info</mat-icon></button>
+            <div class="font-bold">John doe</div>
+            <messages></messages>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="flex flex-col flex-auto">
+        <router-outlet *ngIf="true"></router-outlet>
+    </div>
+
+    <!-- Footer -->
+    <!--<div class="relative flex flex-0 items-center justify-start w-full h-14 px-4 md:px-6 z-49 border-t bg-card dark:bg-transparent print:hidden">
+        <span class="font-medium text-secondary">Fuse &copy; {{currentYear}}</span>
+    </div>-->
+
+</div>
+
+<!-- Quick chat -->
+<quick-chat #quickChat="quickChat"></quick-chat>

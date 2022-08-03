@@ -1,0 +1,217 @@
+<div class="flex flex-col flex-auto min-w-0">
+
+    <!-- Main -->
+    <div class="flex-auto mt-8 mb-8 ml-10 mr-10 bg-card rounded-2xl">
+
+        <!-- CONTENT GOES HERE -->
+        <div>
+            <div class="grid grid-cols-1 mt-6">
+                <mat-tab-group headerPosition="above" [selectedIndex]="5">
+                    <mat-tab label="Transaction List"> Transaction List </mat-tab>
+                    <mat-tab label="Invoices"> Invoices </mat-tab>
+                    <mat-tab label="Payments"> Payments </mat-tab>
+                    <mat-tab label="Credit Notes"> Credit Notes </mat-tab>
+                    <mat-tab label="Payments"> Payments </mat-tab>
+                    <mat-tab label="Age Deptors"> 
+                        <div class="grid grid-cols-1">
+                            <div class="m-4">
+                                <div class="bg-gray-100 rounded-3xl">
+                                    <div class=" flex flex-col sm:flex-row  items-center justify-between px-8 pt-10 pb-5">
+                                    <div class="w-full sm:w-1/4">
+                                        <div class="font-semibold pb-2">Child</div>
+                                            <select class="w-full h-12 mb-4 rounded border border-gray-200">
+                                                <option *ngFor="let item of countries; let i = index">  {{item.name}}</option>
+                                            </select>
+                                    </div>
+                                    <div  class="w-full sm:w-1/4">
+                                        <div class="font-semibold pb-2">Payee</div>
+                                        <!-- <mat-form-field class="w-full"> -->
+                                            <select class="w-full h-12 mb-4 rounded border border-gray-200">
+                                                <option *ngFor="let item of countries; let i = index"> {{item.name}}</option>
+                                            </select>
+                                            <!-- <mat-select name="countryVaraible" placeholder=" Select Payee">
+                                                <mat-option  *ngFor="let country of countries" [value]="country.id">
+                                                    {{country.name}}
+                                                </mat-option>
+                                            </mat-select> -->
+                                        <!-- </mat-form-field> -->
+                                    </div>
+                                    <div  class="w-full sm:w-1/4">
+                                        <div class="flex items-start">
+                                            <input class="w-5 h-5" type="checkbox">
+                                            <div class="pl-2 font-medium">Include those parents who are in <span class="block">credit</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-4 sm:mb-0">
+                                        <button class="text-white bg-teal-600 px-5 py-3 rounded-lg">Search</button>
+                                    </div>
+                                    <div class="mb-4 sm:mb-0">
+                                        <mat-icon class="text-white rounded-full bg-red-600 p-6">cached</mat-icon>
+                                    </div>
+                                    <div class="mb-4 sm:mb-0">
+                                        <mat-icon class="text-black rounded-full bg-gray-300 p-6 text-4xl" (click)="expantMore()">expand_more</mat-icon>
+                                    </div>
+                                    </div>
+                                    <div class=" flex flex-col sm:flex-row  items-center justify-between px-8 pt-0 pb-3" *ngIf="expanttoogle">
+                                        <div class="w-full sm:w-1/4">
+                                            <div class="font-semibold pb-2">Start Date</div>
+                                            <input type="date" class="w-full h-12 mb-4 rounded border border-gray-200 bg-white-600">
+                                                <!-- <select class="w-full h-12 mb-4 rounded border border-gray-200">
+                                                    <option > sdfsdf</option>
+                                                </select> -->
+                                        </div>
+                                        <div  class="w-full sm:w-1/4">
+                                            <div class="font-semibold pb-2">End Date</div>
+                                            <!-- <mat-form-field class="w-full"> -->
+                                                <input type="date" class="w-full h-12 mb-4 rounded border border-gray-200 bg-white-600">
+                                        </div>
+                                        <div  class="mb-4 sm:mb-0">
+                                            <div class="flex items-start">
+                                                <input class="w-5 h-5" type="checkbox">
+                                                <div class="pl-2 font-medium">Include $0 account </div>
+                                            </div>
+                                        </div>
+                                        <div  class="mb-4 sm:mb-0">
+                                            <div class="flex items-start">
+                                                <input class="w-5 h-5" type="checkbox">
+                                                <div class="pl-2 font-medium">wins record </div>
+                                            </div>
+                                        </div>
+                                        <div  class="mb-4 sm:mb-0">
+                                            <div class="flex items-start">
+                                                <input class="w-5 h-5" type="checkbox">
+                                                <div class="pl-2 font-medium">monthly</div>
+                                            </div>
+                                        </div>
+                                        <div  class="mb-4 sm:mb-0">
+                                            <div class="flex items-start">
+                                                <input class="w-5 h-5" type="checkbox">
+                                                <div class="pl-2 font-medium">weekly</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 mt-4 mb-8">
+                            <div class="flex  items-center">
+                                <div class="flex text-black text-center py-2 pl-6">
+                                    <input class="p-2 w-5" type="checkbox" >
+                                    <mat-icon class="text-black text-2xl">expand_more</mat-icon>
+                                </div>
+                                <div class="flex text-black text-center bg-gray-100 cursor-pointer py-2 px-4 ml-4">
+                                    <mat-icon class="text-black text-2xl">email</mat-icon>
+                                    <div class="ml-4">Email</div>
+                                </div>
+                                <div class="flex text-black text-center bg-gray-100 cursor-pointer py-2 px-4 ml-4">
+                                    <mat-icon class="text-black text-2xl">print</mat-icon>
+                                    <div class="ml-4">Print</div>
+                                </div>
+                                <div class="flex text-black text-center bg-gray-100 cursor-pointer py-2 px-4 ml-4">
+                                    <mat-icon class="text-black text-2xl">assignment</mat-icon>
+                                    <div class="ml-4">PDF</div>
+                                </div>
+                            </div>
+                        </div>
+                                    <!-- Mat-Table -->
+            <div class="grid grid-cols-1">
+                <table mat-table
+                    [dataSource]="dataSource" 
+                    cdkDropList 
+                    matSort
+                    cdkDropListOrientation="horizontal"
+                    matSort 
+                    (matSortChange)="announceSortChange($event)"
+                    class="mat-elevation-z8 shadow-none"
+                 >
+
+                 <ng-container matColumnDef="payee">
+                    <th class="text-black" mat-header-cell cdkDrag *matHeaderCellDef mat-sort-header  sortActionDescription="Sort by payee"> Payee <mat-icon class="text-black font-100">swap_vert</mat-icon></th>
+                    <td mat-cell *matCellDef="let element" class="text-blue-400 font-200"> {{element.payee}} </td>
+                    <td mat-footer-cell *matFooterCellDef class="text-white font-semibold"> Total </td>
+                </ng-container>
+
+                <ng-container matColumnDef="child">
+                    <th class="text-black" mat-header-cell cdkDrag *matHeaderCellDef mat-sort-header  sortActionDescription="Sort by child"> Child <mat-icon class="text-black">swap_vert</mat-icon></th>
+                    <td mat-cell *matCellDef="let element" class="text-blue-400 font-200"> {{element.child}} </td>
+                    <td mat-footer-cell *matFooterCellDef class="text-white">  </td>
+                </ng-container>
+
+                <ng-container matColumnDef="weeks3">
+                    <th class="text-black" mat-header-cell cdkDrag *matHeaderCellDef mat-sort-header  sortActionDescription="Sort by weeks3"> weeks3 <mat-icon class="text-black">swap_vert</mat-icon></th>
+                    <td mat-cell *matCellDef="let element"> {{element.weeks3}} </td>
+                    <td mat-footer-cell *matFooterCellDef class="text-white"> </td>
+                </ng-container>
+
+                <ng-container matColumnDef="weeks2">
+                    <th class="text-black" mat-header-cell cdkDrag *matHeaderCellDef mat-sort-header  sortActionDescription="Sort by weeks2"> weeks2 <mat-icon class="text-black">swap_vert</mat-icon></th>
+                    <td mat-cell *matCellDef="let element"> {{element.weeks2}} </td>
+                    <td mat-footer-cell *matFooterCellDef class="text-white"> $4098.25</td>
+                </ng-container>
+                <ng-container matColumnDef="weeks1">
+                    <th class="text-black" mat-header-cell cdkDrag *matHeaderCellDef mat-sort-header  sortActionDescription="Sort by weeks1"> weeks1 <mat-icon class="text-black">swap_vert</mat-icon></th>
+                    <td mat-cell *matCellDef="let element"> {{element.weeks1}} </td>
+                    <td mat-footer-cell *matFooterCellDef class="text-white"> $4098.25 </td>
+                </ng-container>
+                <ng-container matColumnDef="current">
+                    <th class="text-black" mat-header-cell cdkDrag *matHeaderCellDef mat-sort-header  sortActionDescription="Sort by current"> current <mat-icon class="text-black">swap_vert</mat-icon></th>
+                    <td mat-cell *matCellDef="let element"> {{element.current}} </td>
+                    <td mat-footer-cell *matFooterCellDef class="text-white"> $4098.25 </td>
+                </ng-container>
+                <ng-container matColumnDef="pending_amount">
+                    <th class="text-black" mat-header-cell cdkDrag *matHeaderCellDef mat-sort-header  sortActionDescription="Sort by pending_amount"> pending_amount <mat-icon class="text-black">swap_vert</mat-icon></th>
+                    <td mat-cell *matCellDef="let element"> {{element.pending_amount}} </td>
+                    <td mat-footer-cell *matFooterCellDef class="text-white"> $4098.25 </td>
+                </ng-container>
+                <ng-container matColumnDef="over_payment">
+                    <th class="text-black" mat-header-cell cdkDrag *matHeaderCellDef mat-sort-header  sortActionDescription="Sort by over_payment"> over_payment <mat-icon class="text-black">swap_vert</mat-icon></th>
+                    <td mat-cell *matCellDef="let element"> {{element.over_payment}} </td>
+                    <td mat-footer-cell *matFooterCellDef class="text-white"> $4098.25</td>
+                </ng-container>
+                <ng-container matColumnDef="pending_credit_notes">
+                    <th class="text-black" mat-header-cell cdkDrag *matHeaderCellDef mat-sort-header  sortActionDescription="Sort by pending_credit_notes"> pending_credit_notes <mat-icon class="text-black">swap_vert</mat-icon></th>
+                    <td mat-cell *matCellDef="let element"> {{element.pending_credit_notes}} </td>
+                    <td mat-footer-cell *matFooterCellDef class="text-white"> $4098.25 </td>
+                </ng-container>
+                <ng-container matColumnDef="over_pending_amount">
+                    <th class="text-black" mat-header-cell cdkDrag *matHeaderCellDef mat-sort-header  sortActionDescription="Sort by over_pending_amount">over_pending_amount <mat-icon class="text-black">swap_vert</mat-icon></th>
+                    <td mat-cell *matCellDef="let element"> {{element.over_pending_amount}} </td>
+                    <td mat-footer-cell *matFooterCellDef class="text-white"> $5361.84 </td>
+                </ng-container> 
+                <tr mat-header-row *matHeaderRowDef="columns" class="bg-gray-200 font-100"></tr>
+                <tr mat-row  *matRowDef="let row; columns: columns;"></tr>
+                <tr mat-footer-row *matFooterRowDef="columns; sticky: false" class="bg-teal-600"></tr>
+                </table>
+<div class="relative">
+                <mat-paginator  #paginator  showFirstLastButtons
+                [length]="dataSource.data.length"
+                [pageSize]="pageSize"
+                [pageSizeOptions]="pageSizeOptions" (page)="pageChanged($event)">
+                </mat-paginator>
+    <div class="absolute right-4 top-4">
+        <div class="flex">
+            <div class="px-4 py-1.5 cursor-pointer border border-gray-400 rounded-l">5</div>
+            <div class="px-4 py-1.5 cursor-pointer border border-gray-400">15</div>
+            <div class="px-4 py-1.5 cursor-pointer border border-gray-400">25</div>
+            <div class="px-4 py-1.5 cursor-pointer border border-gray-400 rounded-r">100</div>
+        </div>
+    </div> 
+</div>
+    <div ></div>
+            </div>
+                    </mat-tab>
+                  </mat-tab-group>
+                <!-- <div class="flex  items-center border-b">
+                    <div class="flex-initial text-gray-700 text-center bg-white-400 cursor-pointer py-2 ml-8 font-semibold">Transaction List</div>
+                    <div class="flex-initial text-gray-700 text-center bg-white-400 cursor-pointer py-2 ml-8 font-semibold">Invoices</div>
+                    <div class="flex-initial text-gray-700 text-center bg-white-400 cursor-pointer py-2 ml-8 font-semibold">Payments</div>
+                    <div class="flex-initial text-gray-700 text-center bg-white-400 cursor-pointer py-2 ml-8 font-semibold">Credit Notes</div>
+                    <div class="flex-initial text-gray-700 text-center bg-white-400 cursor-pointer py-2 ml-8 font-semibold">Payments</div>
+                    <div class="flex-initial text-cyan-700 text-center bg-white-400 cursor-pointer py-2 ml-8 font-semibold border-b-2 border-cyan-700">Age Deptors</div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</div>

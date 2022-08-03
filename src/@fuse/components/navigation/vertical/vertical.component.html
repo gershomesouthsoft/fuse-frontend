@@ -1,0 +1,61 @@
+<div class="fuse-vertical-navigation-wrapper">
+
+    <!-- Header -->
+    <div class="fuse-vertical-navigation-header">
+        <ng-content select="[fuseVerticalNavigationHeader]"></ng-content>
+    </div>
+
+    <!-- Content -->
+    <div
+        class="fuse-vertical-navigation-content"
+        #navigationContent>
+
+        <!-- Content header -->
+        <div class="fuse-vertical-navigation-content-header">
+            <ng-content select="[fuseVerticalNavigationContentHeader]"></ng-content>
+        </div>
+
+        <!-- Items -->
+        <ng-container *ngFor="let item of navigation; trackBy: trackByFn">
+
+            <!-- Skip the hidden items -->
+            <ng-container *ngIf="(item.hidden && !item.hidden(item)) || !item.hidden">
+
+                <!-- Aside -->
+                <ng-container *ngIf="item.type === 'aside'">
+                    <fuse-vertical-navigation-aside-item
+                        [item]="item"
+                        [name]="name"
+                        [activeItemId]="activeAsideItemId"
+                        [autoCollapse]="autoCollapse"
+                        [skipChildren]="true"
+                        (click)="toggleAside(item)"></fuse-vertical-navigation-aside-item>
+                </ng-container>
+
+                <div  class="mx-6 mt-10">
+                    <mat-icon class="text-white absolute mt-2 ml-1">assignment</mat-icon>
+                   <select class="w-full bg-teal-300 h-10 pl-8 text-white rounded">
+                    <option>Finance & Account</option>
+                   </select>
+                </div>
+
+            </ng-container>
+
+        </ng-container>
+
+        <!-- Content footer -->
+        <div class="fuse-vertical-navigation-content-footer">
+            <ng-content select="[fuseVerticalNavigationContentFooter]"></ng-content>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="fuse-vertical-navigation-footer">
+        <ng-content select="[fuseVerticalNavigationFooter]"></ng-content>
+    </div>
+
+</div>
+
+<!-- Aside -->
+
